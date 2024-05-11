@@ -108,3 +108,19 @@ GROUP BY den_ned, idgroups;
 
 
 
+SELECT 
+    'pnamedisc' as 'наименование дисциплины', count(pnamedisc) as 'количетсво повотрений'
+FROM
+    discipl
+where pnamedisc like '%базы данных%'
+GROUP BY pnamedisc
+having count(pnamedisc) > 1;
+
+SELECT knamedisc, COUNT(*) AS num_disciplines
+FROM discipl
+WHERE hours > 50
+GROUP BY knamedisc;
+SELECT knamedisc, AVG(hours) AS avg_hours
+FROM discipl
+GROUP BY knamedisc
+HAVING AVG(hours) > 50;
