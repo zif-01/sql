@@ -19,4 +19,92 @@ SELECT
 FROM
     students
 WHERE
-    `name` BETWEEN 'М' AND 'Ц';
+    `name` BETWEEN 'М' AND 'П';
+SELECT 
+    *
+FROM
+    students
+WHERE
+    'name' LIKE 'M%';
+SELECT 
+    *
+FROM
+    students
+WHERE
+    'name' LIKE '%$%%' ESCAPE '$';
+    
+SELECT 
+    *
+FROM
+    sutudents
+WHERE
+    'name' REGEXP '[н]';
+
+SELECT 
+    *
+FROM
+    students
+WHERE
+    'docum' IS NULL;
+    
+SELECT 
+    *
+FROM
+    students
+WHERE
+    'docum' IS NOT NULL;
+SELECT 
+    *
+FROM
+    students
+WHERE
+    'docum' IS NOT NULL
+        AND 'idgroups' IS NULL;
+	
+SELECT 
+    COUNT(idstud)
+FROM
+    students;
+
+SELECT 
+    COUNT(DISTINCT idgroups)
+FROM
+    students;
+    
+SELECT 
+    AVG(hours)
+FROM
+    discipl;
+
+SELECT 
+    MAX(hours)
+FROM
+    discipl;
+    
+SELECT 
+    MIN(hours / 36)
+FROM
+    discipl;
+
+
+SELECT 
+    den_ned, COUNT(idgroups)
+FROM
+    sched
+GROUP BY den_ned;
+
+
+SELECT 
+    'pnamedisc', count(pnamedisc)
+FROM
+    discipl
+GROUP BY pnamedisc;
+
+SELECT 
+    den_ned, idgruops, COUNT(vid_z)
+FROM
+    sched
+GROUP BY den_ned, idgroups;
+
+
+
